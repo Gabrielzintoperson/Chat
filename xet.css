@@ -1,0 +1,87 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    max-width: 800px;
+    margin: 40px auto;
+    scroll-behavior: auto;
+}
+
+#mensagens{
+    padding: 30px;
+    border-radius: 2rem 0 0 0 ;
+    max-width: 800px;
+    height: 80vh;
+    background: cornflowerblue;
+    overflow-y: scroll;
+}
+
+#nomeRec, #nomeEnv{
+    max-width: 300px;
+    min-height: 30px;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    margin-top: 20px;
+    border-radius: .5rem;
+    padding: 0 15px;
+}
+
+#nomeRec{
+    background: #afafaa;
+}
+
+#nomeRec + #nomeRec, #nomeEnv + #nomeEnv{
+    margin-top: 10px;
+}
+
+#nomeEnv{
+    margin-left: auto;
+    background: #8dff8d;
+}
+
+#nr, #ne{
+    display: block;
+    font-size: 1rem;
+    padding-top: 5px;
+}
+
+.recebida, .enviada{
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#horaRec, #horaEnv{
+    font-size: small;
+    margin-bottom: 0px;
+    margin-right: -10px;
+}
+
+.envia{
+    display: flex;
+}
+
+#escreve{
+    width: 90%;
+    height: 60px;
+    border: 0 none;
+    border-radius: 0 0 0rem 2rem;
+    background: #dbdbdb;
+    font-size: 1.3rem;
+    outline: none;
+    padding-left: 30px;
+}
+
+#enviar{
+    background: #7cdd56;
+    font-size: 1.3rem;
+    width: 10%;
+    height: 60px;
+    border: 0;
+    outline: none;
+    border-radius: 0 0 2rem 0;
+}
