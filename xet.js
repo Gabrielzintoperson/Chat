@@ -1,5 +1,5 @@
-localStorage.setItem("mensagemEsc", "")
-localStorage.setItem("mensagemRec", "")
+sessionStorage.setItem("mensagemEsc", "")
+sessionStorage.setItem("mensagemRec", "")
 var mensagem = "";
 
 var enviada, recebida;
@@ -8,8 +8,8 @@ var nome = prompt('Qual seu nome');
 function enviar(){
     if(document.querySelector("#escreve").value !== ""){
         mensagem = document.querySelector("#escreve").value;
-        localStorage.setItem("mensagemEsc", mensagem)
-        localStorage.setItem("mensagemRec", `<div id='nomeRec'><div id='nr'>${nome}</div><div class='recebida'><div id='mensRec'>${mensagem}</div><span id='horaRec'>18:39</span></div></div>`);
+        sessionStorage.setItem("mensagemEsc", mensagem)
+        sessionStorage.setItem("mensagemRec", `<div id='nomeRec'><div id='nr'>${nome}</div><div class='recebida'><div id='mensRec'>${mensagem}</div><span id='horaRec'>18:39</span></div></div>`);
         enviada = `<div id='nomeEnv'><div id='ne'>${nome}</div><div class='enviada'><div id='mensEnv'>${mensagem}</div><span id='horaEnv'>18:39</span></div></div>`;
         document.querySelector("#mensagens").innerHTML += enviada;
         document.querySelector("#escreve").value = "";
@@ -18,16 +18,18 @@ function enviar(){
     return false
 }
 
+sessionStorage.setItem("Oi", "mãe")
+
 setInterval(function(){
-    recebida = localStorage.getItem("mensagemRec")
+    recebida = sessionStorage.getItem("mensagemRec")
 
     if(recebida.value !== ""){
-        if(localStorage.getItem("mensagemEsc") !== mensagem){
+        if(sessionStorage.getItem("mensagemEsc") !== mensagem){
 
-            recebida = localStorage.getItem("mensagemRec");
+            recebida = sessionStorage.getItem("mensagemRec");
             document.querySelector('#mensagens').innerHTML += recebida;
-            localStorage.setItem("mensagemRec", "")
-            localStorage.setItem("mensagemEsc", "")
+            sessionStorage.setItem("mensagemRec", "")
+            sessionStorage.setItem("mensagemEsc", "")
             mensagem = ""
 
         }
